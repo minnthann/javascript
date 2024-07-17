@@ -6,7 +6,7 @@ function hello () {
 
 */
 
-/*
+
 // step 2
 function hello () {
 if (document.querySelector("h1").innerHTML === "Hello, ygn") {
@@ -16,18 +16,18 @@ if (document.querySelector("h1").innerHTML === "Hello, ygn") {
 }
   
 }
-*/
+
 
 
 // step 3
 // shorthand
-let heading = document.querySelector("h1");
-function hello () {
-    if (heading.innerHTML === "Hello, ygn") {
-        heading.innerHTML = "welcome to pannoCollage! 2024";   
-    }else  {
-        heading.innerHTML = "Hello, ygn";
-    }
+// let heading = document.querySelector("h1");
+// function hello () {
+//     if (heading.innerHTML === "Hello, ygn") {
+//         heading.innerHTML = "welcome to pannoCollage! 2024";   
+//     }else  {
+//         heading.innerHTML = "Hello, ygn";
+//     }
       
-}
+// }
     
