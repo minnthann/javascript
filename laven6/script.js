@@ -1,5 +1,4 @@
 document.addEventListener ("DOMContentLoaded", function () {
-    // fetch("https://open.er-api.com/v6/latest/USD")
     fetch("https://open.er-api.com/v6/latest/USD")
     .then((response) => {
         return response.json();
@@ -10,8 +9,8 @@ document.addEventListener ("DOMContentLoaded", function () {
         const မြန်မာငွေ = data.rates.MMK;
         // console.log(rate);
 
-        document.querySelector("body")
-        .innerHTML = "ယနေ့ ဒေါ်လာပေါက်စျေးက ${မြန်မာငွေ.toFixed(2)} MMK ဖစ်ပါတယ်။";
+        document.querySelector('body')
+        .innerHTML = `ယနေ့ ဒေါ်လာပေါက်စျေးက ${မြန်မာငွေ.toFixed(2)} MMK ဖစ်ပါတယ်။`;
     })
 
     .catch((error) => {
