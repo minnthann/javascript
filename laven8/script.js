@@ -41,7 +41,7 @@ aa("ka, la")
 // console.log နေရာမှာ return ရေးထည့်လို့ ရပါသည်  ၁တခုပဲ ထွက်ပါသည်
 // return တခုပဲ ရေးလို့ရ
 
-function az (a, ...b) {
+function az (a, b) {
     console.log(a);
     console.log(b);
 }
