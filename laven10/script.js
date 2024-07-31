@@ -15,7 +15,7 @@ function htmlOption () {
 //     }); 
 
     airports.forEach ((ap) => {
-        let optionAp = `<option value="${ap.iata}">${ap.name}(${ap.iata})></option>`;
+        let optionAp = `<option value="${ap.iata}" > ${ap.name} (${ap.iata})></option>`;
         departure.insertAdjacentHTML("beforeend", optionAp);
         arrival.insertAdjacentHTML("beforeend", optionAp);
     })
@@ -42,17 +42,17 @@ function checkFlight (){
 
    if(flight && departureAp && arrivalAp) {
     showResult.innerHTML = `
-    <h2 class="resulth2">Flight status</h>
+    <h2 class="resulth2">Flight status</h2>
 
-    <p class="subTile"> Departure Airoprt: <span clas="details"> ${departureAp.name} (${departureAp.iata})<p/>
+    <p class="subTitle"> Departure Airoprt: <span class="details"> ${departureAp.name} (${departureAp.iata})</span></p>
 
-    <p> Arrival Airoprt: ${departureAp.name} (${departureAp.iata})<p/>
+    <p class="subTitle"> Arrival Airoprt:  <span class="details">${arrivalAp.name} (${arrivalAp.iata})</span><p/>
 
-    <p> Departure Time: ${flight.departureTime} <p/>
-    <p> Arrival Time: ${flight.arrivalTime}<p/>
+    <p class="subTitle"> Departure Time: <span class="details">${flight.departureTime} </span><p/>
+    <p class="subTitle"> Arrival Time: <span class="details">${flight.arrivalTime}</span><p/>
 
-    <p> Departure Date: ${flight.departureTime} <p/>
-    <p> Arrival Date: ${flight.arrivalTime}<p/>
+    <p class="subTitle"> Departure Date: <span class="details">${flight.departureTime}</span> <p/>
+    <p> Arrival Date: <span class="details">${flight.arrivalTime}</span><p/>
     `;
    }else {
     showResult.innerHTML = "Flight details NOT found!";

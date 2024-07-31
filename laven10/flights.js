@@ -37,5 +37,25 @@ const flights = [
         "arrivalDate": "Jan 01, 2024",
         "status": "Delayed",
         "duration": "17h 00m"
+    },
+    {
+        "departureIATA": "RGN",
+        "arrivalIATA": "TPE",
+        "departureTime": "13:00",
+        "departureDate": "Jan 01, 2024",
+        "arrivalTime": "06:00",
+        "arrivalDate": "Jan 01, 2024",
+        "status": "Delayed",
+        "duration": "17h 00m"
+    },
+    {
+        "departureIATA": "RGN",
+        "arrivalIATA": "JFK",
+        "departureTime": "13:00",
+        "departureDate": "Jan 01, 2024",
+        "arrivalTime": "06:00",
+        "arrivalDate": "Jan 01, 2024",
+        "status": "Delayed",
+        "duration": "17h 00m"
     }
   ];
