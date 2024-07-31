@@ -30,7 +30,7 @@ function checkFlight (){
   if(!departureIATA || !arrivalIATA) {
     console.log("Error");
     showResult.textContent = "Select both departure and arrival airopsts ! Message";
-    // return;
+    return;
   }
 
   let flight= flights.find(
