@@ -158,3 +158,11 @@ function tow (m) {
 setTimeout(() => one(() => tow("in tow")), 3000); 
 // setTimeout က function msစက္ကန့် ထည်ရ
 
+ကွေ့ကောက်ပိးသွားသည်
+callbackHell
+ရိုးရှင်းသည်
+Promise Chain
+resolve - .then .then .then (.allSettings /. all)
+reject -.catch
+
+.finally
