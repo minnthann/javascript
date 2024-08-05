@@ -162,7 +162,8 @@ setTimeout(() => one(() => tow("in tow")), 3000);
 callbackHell
 ရိုးရှင်းသည်
 Promise Chain
-resolve - .then .then .then (.allSettings /. all)
+resolve - .then .then .then //အလွယ်ရေးနည်း 
+(.allSettings /. all)
 reject -.catch
 
 .finally
