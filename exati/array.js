@@ -57,3 +57,30 @@ console.log(arr7);   // Output: [1, 4, 9, 16, 25]
     console.log(fruits[2]); // Output: cherry
     
     console.log(fruits[3]); // Output: date
+
+
+        // Array
+        const fruits = ['apple', 'banana', 'mango', 'orange'];
+
+        // forEach method ကို အသုံးပြုပြီး array ထဲက element တစ်ခုချင်းစီကို print လုပ်မယ်
+        fruits.forEach(function(fruit, index) {
+            console.log(index + 1 + ': ' + fruit);
+        });
+
+
+        const students = ['John', 'Jane', 'Jack', 'Jill'];
+
+for (let i = 0; i < students.length; i++) {
+    console.log(`Great to see you, ${students[i]}!`);
+}
+        // Arrow function နဲ့ ရေးဖို့လည်း ရတယ်
+        fruits.forEach((fruit, index) => {
+            console.log(index + 1 + ': ' + fruit);
+        });
+
+    ရှင်းပြချက်
+fruits ဆိုတာ apple, banana, mango, orange ဆိုတဲ့ array ပါ။
+fruits.forEach method ကိုအသုံးပြုပြီး fruits array ထဲက element တစ်ခုချင်းစီကို iterate လုပ်တယ်။
+function(fruit, index) က array ထဲက element ကို fruit parameter နဲ့လက်ခံပြီး၊ index ကို index parameter နဲ့လက်ခံတယ်။
+ထို function ထဲမှာ console.log ကိုအသုံးပြုပြီး index + 1 နဲ့ element ကို print လုပ်တယ်။
+forEach ကိုအသုံးပြုတာက code ရေးသားတဲ့အခါမှာ logic ကို လွယ်ကူစွာ ဖတ်ရှုနိုင်အောင် လုပ်ပေးနိုင်တယ်။ forEach method က async operation တွေမှာရော၊ synchronous operation တွေမှာပါ အသုံးပြုနိုင်တယ်။
