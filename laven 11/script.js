@@ -1,101 +1,69 @@
-// resolve, reject
-function အာရုံဆွမ်း () {
-  return new Promise ((resolve, reject) => {
-    setTimeout(() => {
-      reject("အာရုံဆွမ်း စားပီးပီ")
-    }, 2000)
-  })
+
+
+
+function createOption(){
+    let dept = document.querySelector("#departure");
+    let arri = document.querySelector("#arrival");
+
+    for (let i=0; i< airports.length; i++){
+        let ap = airports[i];
+        let option =document.createElement("option");
+        option.value = ap.iata;
+        option.textContent =`${ap.name} (${ap.iata})`;
+        dept.appendChild(option);
+        arri.appendChild(option.cloneNode(true));
+    }
 }
 
-function နေ့ဆွမ်း () {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      console.log("နေ့ဆွမ်း စားပီးပီ")
-    }, 2400)
-  })
-}
+// createOption();
 
-function ဘုရားဝတ်တတ် () {
-  return new Promise((resolve, reject) => {
-  setTimeout(() => {
-    console.log("ဘုရားဝတ်တတ် ပီးပီ")
-  }, 2500)
-})
-}
 
-function စာကျက် () {
-  return new Promise((resolve, reject) => {
-  setTimeout(() => {
-    console.log("စာကျက် ပီးပီ")
-  }, 2500)
-})
-}
-
-// အာရုံဆွမ်း ()
-// .then((val) => {
-//   console.log(val);
-//   return နေ့ဆွမ်း();
-// })
-// .then((val) => {
-//   console.log(val);
-//   return ဘုရားဝတ်တတ် ();
+// airports.forEach((ap)=> {
+//     let option = document.createElement("option");
+//     option.value = ap.iata;
+//     option.textContent = `${ap.name} (${ap.iata})`;
+//     dept.appendChild(option);
+//     arri.appendChild(option.cloneNode(true));
 // })
 
-// .then((val) => {
-//   console.log(val);
-//   return ဘုရားဝတ်တတ် ();
-// })
+function checkingFlight(){
+    let deptVal = document.querySelector("#departure").value;
+    let arriVal = document.querySelector("#arrival").value;
+    let result = document.querySelector("#result");
+    
+    if(!deptVal || !arriVal) {
+        result.innerHTML = `<p>တစ်ခုကျန်နေသေးတယ်</p> `;
+        return;
+    }
 
-// .then((val) => {
-//   console.log(val);
-//   return စာကျက် ();
-// })
+    let flight = flights.find (
+        (f) => f.departureIATA === deptVal && f.arrivalIATA === arriVal
+    );
+    console.log(flight);
+    let deptF = airports.find((df) => df.iata === deptVal);
+    console.log(deptF);
+    let arriF = airports.find((af) => af.iata === arriVal);
+    console.log(arriF);
 
-function အာရုံဆွမ်း () {
-  return new Promise ((resolve, reject) => {
-    setTimeout (() => {
-      let Fun1 = true;
-      if(Fun1) {
-        resolve("အာရုဏ်ဆွမ်း ကိစ္စ dome");
-      }else { 
-        reject("အာရုံဆွမ်းတော့ ငတ်ပီ )MG");
-      }
-    }, 3000);
-  });
+    if (flight && deptF && arriF) {
+        result.innerHTML = `
+        <h1>လေကြောင်းခရီးစဥ်</h1>
+        <ul>
+            <li> ထွက်ခွါမည့်လေဆိပ်- ${deptF.name} (${deptF.iata})</li>
+        </ul>` ;
+    }else{
+        result.innerHTML = `<p>  မှားနေပါတယ်</p>`;
+    }
 }
 
-အာရုံဆွမ်း()
-.then ((e) => {
-  console.log(e);
-})
-.catch((w) => {
-  console.log (w);
-})
+document.addEventListener("DOMContentLoaded", ()=>{
+    createOption();
+    // checkingFlight();
+    document
+    .querySelector("#departure")
+    .addEventListener("change", checkingFlight);
 
-
-/*
-အာရုံဆွမ်း (cd) {
-setTimeout (() => {
-  console.log
-  })
-}
-
-
-အာရုံဆွမ်း (() =>{ 
-နေ့ဆွမ်း(() => { 
-ဘုရားဝတ်တတ် (() => { 
-  console.log("end")
-})
-})
-})
-
-
-let fruits = ["apple", "banana", "cucumber", "orange", "carrot"];
-fruits.forEach ((e, i)=> {
-    setTimeout(()=> {
-        console.log(e);
-    }, i * 1000)//တခုချင်းဆီ ထုတ်ပြဖို့ မြှာက်ပါ
-})
-count ();
-
-*/
+    document
+    .querySelector("#arrival")
+    .addEventListener("change", checkingFlight);
+});

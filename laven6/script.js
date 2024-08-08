@@ -14,7 +14,8 @@ document.addEventListener ("DOMContentLoaded", function () {
     })
 
     .catch((error) => {
-        console.error("Error:", error);
+        // console.error("Error:", error);
+        console.log("ဝက်ဘ်ဆိုက်မှာ ပြဿနာ တစ်ခုရှိတယ်", error);
     });
 });
 

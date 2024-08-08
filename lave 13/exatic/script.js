@@ -70,3 +70,94 @@ cartoom();
 // jerry
 // should i be right afrer tom, before jerry?
 // 5se Tom
+
+
+function selectfruit() {
+    return new Promise ((resolve) => {
+        setTimeout (() =>{
+            console.log("Selected fruit");
+            resolve();
+        }, 1000)
+    });
+}
+function chopFruit (){
+    return new Promise ((resolve)=> {
+        setTimeout (()=> {
+            console.log("Chopped fruit");
+            resolve();
+        }, 1000)
+    });
+}
+
+function processOrder () {
+    selectfruit()
+    .then(chopFruit)
+    .then(()=>{
+        console.log("Order processed");
+    })
+    .catch ((error)=>{
+        console.log("Error:", error);
+    }, );
+}
+processOrder();
+
+// selectfruit
+// chopFruit
+// orderprocessed
+// အပေါ်အောက်တူပီ
+function selectfruit(callback) {
+        setTimeout (() =>{
+            console.log("Selected fruit");
+            callback();
+        }, 1000)
+}
+function chopFruit (callback){
+        setTimeout (()=> {
+            console.log("Chopped fruit");
+            callback();
+        }, 1000)
+}
+function processOrder(){
+    selectfruit(()=> {
+        chopFruit(()=> {
+            console.log("Order processed");
+        });
+    });
+}
+processOrder();
+
+let x = function(z){
+    setTimeout(function(){
+        console.log('9')
+    }, 2000)
+    z();
+}
+
+let y = function(){
+    console.log('7');
+}
+x(y);
+
+// 7
+// 2se 9
+
+let x = {
+    A:[1, 2, 3, 4],
+    B: [5, 6, 7, 8]
+}
+let write = ()=> {
+    return new Promise((res, rej) =>{
+        if(mess){
+            res("yes")
+        }else{
+            rej('no')
+        }
+    })
+}
+write()
+.then ((msg) =>{
+    console.log(msg);
+})
+.catch((erro) =>{
+    console.log(erro);
+})
