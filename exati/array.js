@@ -77,7 +77,14 @@ for (let i = 0; i < students.length; i++) {
         fruits.forEach((fruit, index) => {
             console.log(index + 1 + ': ' + fruit);
         });
-
+        .then ((xs)=>{
+            xs.forEach(()=>{
+                setTimeout(()=>{
+                    console.log(x);
+                }, 2000)
+            });    
+        })
+      
     ရှင်းပြချက်
 fruits ဆိုတာ apple, banana, mango, orange ဆိုတဲ့ array ပါ။
 fruits.forEach method ကိုအသုံးပြုပြီး fruits array ထဲက element တစ်ခုချင်းစီကို iterate လုပ်တယ်။

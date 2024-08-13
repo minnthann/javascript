@@ -167,3 +167,88 @@ resolve - .then .then .then //အလွယ်ရေးနည်း
 reject -.catch
 
 .finally
+
+
+Promise
+Resolve (fullfilled), Reject (failed)
+                            .catch //ကျဆုံး
+.thin //အေင်မြင်         
+.thin
+        .finally //အကုန်ပီးသွားသောအခါ
+
+
+js သဘောတရားသည် တကြိမ်မှ တခါသာ အလုပ်လုပ်ပါသည်
+
+windowမှာ ဘာပေါ်ပေါ် api
+
+
+အသွားတခု အပြန်တခု သွားလို့ရသော ကုဒ်ကို 
+Asynchronous
+တစ်ခုစီအတွက် သီးသန့် အလုပ်လုပ်နိုင်
+
+
+ဆင့်ခိုနက်
+Synchronous = တခုပီး တစ်ခု ဆက်တိုက်လုပ်သည်၊ အစဥ်တိုင်းပေါ်လာတာကို ခေါ်ပါသည်.
+
+console.log('I');
+console.log('eat');
+console.log('banna');
+console.log('evary');
+console.log('day.');
+
+
+console.log("A")
+
+f
+setTimeout (() => {
+    console.log("O")
+    x;
+}, 1500);
+
+console.log("B")
+console.log ("c")
+
+
+function one (call_tow){
+    console.log("One")
+    call_tow();
+}
+
+function tow (){
+    console.log("Two")
+}
+one (tow);
+
+function f1 (){
+    console.log ('f1');
+}
+console.log("letos do i!")
+setTimeout(() => {
+    
+}, (()));
+
+
+for(var e = 0; e <= 10; e++){
+// do this
+}
+// တူ 
+
+forEach (
+    function(){
+        // do this
+    }
+)
+
+
+callbackHell
+Promise
+Promise.all
+Promise.allSettled
+Promise.race
+
+async-await(try-catch)
+async function all(){
+    await f1('yango');
+    await f2('mmd');
+}
+all ();
