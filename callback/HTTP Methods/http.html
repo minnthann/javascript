@@ -1,0 +1,189 @@
+Fetch()
+The fetch method is a modern and powerful way to make network requests in JavaScript. It allows you to request resources (like data from an API) and handle the response asynchronously. Introduced in ES6, it replaced the older XMLHttpRequest method with a more flexible and cleaner syntax.
+
+Key Features of fetch:
+
+	1.	Promise-based: The fetch method returns a Promise, making it easier to handle asynchronous operations compared to callback-based approaches.
+
+	2.	Simpler Syntax: With fetch, you can make HTTP requests using a simpler and more readable syntax.
+
+	3.	Handles Various HTTP Methods: You can use fetch for different HTTP methods like GET, POST, PUT, PATCH, and DELETE.
+
+	4.	Works in Modern Browsers: fetch is supported by most modern browsers, making it a reliable choice for web applications.
+
+Basic Usage of fetch:
+
+fetch('https://api.example.com/data')
+
+  .then(response => response.json()) // Convert the response to JSON
+
+  .then(data => console.log(data))    // Handle the JSON data
+
+  .catch(error => console.error('Error:', error)); // Handle any errors
+
+How fetch Works:
+
+	•	Step 1: Make a request. You call fetch with the URL of the resource you want to fetch.
+
+	•	Step 2: Handle the response. The fetch method returns a Promise that resolves to the Response object representing the response to the request.
+
+	•	Step 3: Process the data. Use methods like .json(), .text(), or .blob() on the Response object to extract and process the data.
+
+	•	Step 4: Error handling. You can use the .catch() method to handle any errors that occur during the fetch operation.
+
+Example with Different HTTP Methods:
+
+	•	GET: Retrieves data.
+
+	•	POST: Sends data to the server to create a new resource.
+
+	•	PUT: Replaces an existing resource with new data.
+
+	•	PATCH: Partially updates an existing resource.
+
+	•	DELETE: Deletes a resource.
+
+//(Step:1)
+fetch('https://reqres.in/api/users', {optional})
+
+
+//(Step:2)
+console.log(fetch('https://reqres.in/api/users'))
+
+
+//(Step:3)
+fetch('https://reqres.in/api/users')
+.then(res => console.log(res))
+
+
+//(Step:4)
+fetch('https://reqres.in/api/users')
+ .then(res => res.json())
+ .then(data => console.log(data))
+
+const url = 'https://jsonplaceholder.org/users';
+async function getData() {
+  const response = await fetch(url);
+  console.log(response);
+  
+  const data = await response.json();
+  console.log(data);
+}
+getData();
+
+  
+//(Step:5)
+ fetch('https://reqres.in/api/users/23')//this is error because there is no 23
+ .then(res => {
+  if(res.ok){
+    console.log('Success!')
+  } else {
+    console.log('Not Success!')
+  }
+ })
+ .then(data => console.log(data))
+ .catch(error => console.log('Error:', error))
+
+   
+//(Step:6)
+fetch('https://reqres.in/api/users', {
+  method: 'POST',
+  body: {
+    name: 'Yangon'
+  }
+})
+.then(res => {
+ return res.json()
+})
+.then(data => console.log(data))
+.catch(error => console.log('Error:', error))
+
+  
+//(Step:7)
+fetch('https://reqres.in/api/users', {
+  method: 'POST',
+  body: JSON.stringify({ //not yet added into 
+    name: 'Yangon'
+  })
+})//adding a new user into
+.then(res => {
+ return res.json()
+})
+.then(data => console.log(data))
+.catch(error => console.log('Error:', error))
+HTTP Methods
+GET
+Purpose: The GET method is used to retrieve data from a server. It’s one of the most commonly used methods and is often employed to request data without affecting the resource.
+
+//  'GET' Purpose: Retrieves data from a server
+
+fetch('https://reqres.in/api/users')
+  .then(res => res.json())
+  .then(data => console.log(data))
+  .catch(error => console.log('Error:', error))
+HTTP Methods
+POST
+Purpose: The POST method is used to send data to the server to create a new resource. It’s commonly used when submitting forms or uploading files.
+
+fetch('https://reqres.in/api/users', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    name: 'Yangon'
+  })
+})
+.then(res => {
+ return res.json()
+})
+.then(data => console.log(data))
+.catch(error => console.log('Error:', error))
+HTTP Methods
+PUT
+Purpose: The PUT method is used to update or replace an existing resource on the server. It usually requires the entire resource data, which will replace the existing data.
+
+fetch('https://reqres.in/api/users/2', {
+  method: 'PUT',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    name: 'Rangoon',
+    job: 'Developer'
+  })
+})
+.then(res => res.json())
+.then(data => console.log(data))
+.catch(error => console.log('Error:', error))
+HTTP Methods
+PATCH
+Purpose: The PATCH method is similar to PUT but is used to apply partial updates to a resource. Unlike PUT, which replaces the entire resource, PATCH only modifies the specified fields.
+
+fetch('https://reqres.in/api/users/2', {
+  method: 'PATCH',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({ 
+    name: 'New Yangon'
+  })
+})
+.then(res => res.json())
+.then(data => console.log(data))
+.catch(error => console.log('Error:', error));
+HTTP Methods
+DELETE
+Purpose: The DELETE method is used to remove a resource from the server. It permanently deletes the specified resource.
+
+fetch('https://reqres.in/api/users/2', {
+  method: 'DELETE'
+})
+.then(res => {
+  if(res.ok){
+    console.log('User deleted')
+  } else {
+    console.log('Error deleting user')
+  }
+})
+.catch(error => console.log('Error:', error))

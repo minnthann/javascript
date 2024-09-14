@@ -252,3 +252,27 @@ async function all(){
     await f2('mmd');
 }
 all ();
+
+
+let အသက် = 18 ;
+console.log (
+    `${
+        အသက် === 18 ? 'you are so so beautiful, so cute!' : 'hello'
+    }`
+)
+
+
+let အသက် = 18 ;
+console.log (
+    `${
+        အသက် === 18 ? 'you are so so beautiful, so cute!' : 
+        'hello'
+    }`
+)
+
+userName.trim() === '' စပေ့ပုတ်ခဲ့ရင် နာမည် မထည့်မချင်း မသွားရ
+
+none က အကုန်ဖယ် hidden နေရာယူတယ် မပျောက်ပါ  ဖျောက်
+'visible' ကဖော်ပြလိုက်တယ်  block  တခြားတနေရာကဟာကို ယူပြီးလာပေါ်   ပေါ်
+
+shuffleArray ကလားဖန်ထို lorem နဲ့တူ

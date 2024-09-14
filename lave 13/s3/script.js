@@ -125,8 +125,8 @@ let proess = ()=> {
     }, 1000);
 };
 
-.catch((error)=> {
-    console.log('error, error')
-})
+// .catch((error)=> {
+//     console.log('error, error')
+// })
 သင်ပုန်းကြီး(0, proess);
 
