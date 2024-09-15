@@ -51,3 +51,21 @@ document.addEventListener ('DOMContentLoaded', function() {
     // event ဟန်တလာ
     document.querySelector('button').onclick=count;
 });
+// function အစားထိုးခြင်း အသုံးပြုပုံ
+
+// function ( ) { }
+// = () => { }
+
+
+    /*
+for(var e = 0; e <= 10; e++){
+// do this
+}
+// တူ 
+
+forEach (
+    function(){
+        // do this
+    }
+)
+*/

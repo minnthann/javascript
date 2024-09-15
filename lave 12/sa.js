@@ -8,7 +8,7 @@ let write = (y, z)=> {
     return new Promise ((res, rej)=> {
 
     })
-    // console.log(`${x.A[0]}`)
+    console.log(`${x.A[0]}`)
 
 }
 write ();

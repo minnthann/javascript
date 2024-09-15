@@ -9,8 +9,7 @@
 //     document.querySelector('#submit').disabled = false;
 // }
 
-
 document.querySelector('form').onsubmit = function() {
     let urName = document.querySelector('#name').value;
-    alert('မင်္ဂလာပါ, ${urName}');
+    alert(`မင်္ဂလာပါ, ${urName}`);
 }
